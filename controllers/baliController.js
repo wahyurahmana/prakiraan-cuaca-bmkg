@@ -10,7 +10,16 @@ module.exports = async (req, res) => {
     })
     const xml = ntb.data
     parseString(xml, function (err, result) {      
-      res.status(200).json(result.data.forecast)
+      const area = {
+          Amlapura : {
+            cuaca : {
+              hari_ini : checkCuaca(result.data.forecast[0].area[1].parameter[6].timerange[3].value[0]._),
+              besok : checkCuaca(result.data.forecast[0].area[1].parameter[6].timerange[7].value[0]._),
+              lusa : checkCuaca(result.data.forecast[0].area[1].parameter[6].timerange[11].value[0]._)
+            }
+          }
+      }
+      res.status(200).json({status : true, area})
     });
   } catch (error) {
     res.status(500).json(error)
