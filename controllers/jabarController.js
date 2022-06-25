@@ -4,7 +4,7 @@ const xmlToJSON = require('../helpers/xmlToJSON');
 module.exports = async (req, res) => {
   try {
     const result = await axios({
-      url : 'https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-Aceh.xml',
+      url : 'https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-JawaBarat.xml',
       method : 'GET'
     })
     const xml = result.data
