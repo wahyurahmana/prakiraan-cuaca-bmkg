@@ -13,9 +13,23 @@ module.exports = async (req, res) => {
       const area = {
           Amlapura : {
             cuaca : {
+              hari_ini : checkCuaca(result.data.forecast[0].area[0].parameter[6].timerange[3].value[0]._),
+              besok : checkCuaca(result.data.forecast[0].area[0].parameter[6].timerange[7].value[0]._),
+              lusa : checkCuaca(result.data.forecast[0].area[0].parameter[6].timerange[11].value[0]._)
+            }
+          },
+          Bangli :{
+            cuaca : {
               hari_ini : checkCuaca(result.data.forecast[0].area[1].parameter[6].timerange[3].value[0]._),
               besok : checkCuaca(result.data.forecast[0].area[1].parameter[6].timerange[7].value[0]._),
               lusa : checkCuaca(result.data.forecast[0].area[1].parameter[6].timerange[11].value[0]._)
+            }
+          },
+          Denpasar : {
+            cuaca : {
+              hari_ini : checkCuaca(result.data.forecast[0].area[2].parameter[6].timerange[3].value[0]._),
+              besok : checkCuaca(result.data.forecast[0].area[2].parameter[6].timerange[7].value[0]._),
+              lusa : checkCuaca(result.data.forecast[0].area[2].parameter[6].timerange[11].value[0]._)
             }
           }
       }
