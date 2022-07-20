@@ -9,7 +9,8 @@ module.exports = async (req, res) => {
     })
     const xml = result.data
     const area = await xmlToJSON(xml)
-    res.status(200).json({status : true, area})
+    
+    res.status(200).json({status : true, area : area})
   } catch (error) {
     res.status(500).json(error)
   }
